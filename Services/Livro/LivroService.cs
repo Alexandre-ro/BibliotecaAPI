@@ -20,7 +20,8 @@ namespace BibliotecaAPI.Services.Livro
 
             try
             {
-                var livros = await _context.Livros.ToListAsync();
+                var livros = await _context.Livros.Include(a => a.Autor)
+                                                  .ToListAsync();
 
                 resposta.Dados = livros;
                 resposta.Mensagem = "Os Livros foram encontrados com sucesso.";
