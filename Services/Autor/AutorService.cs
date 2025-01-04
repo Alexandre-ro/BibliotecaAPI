@@ -22,8 +22,7 @@ namespace BibliotecaAPI.Services.Autor
             {
                 var autores = await _context.Autores.ToListAsync();
 
-                resposta.Dados = autores;
-                resposta.Status = true;
+                resposta.Dados = autores;                
                 resposta.Mensagem = "Todos os autores foram coletados";
 
                 return resposta;

@@ -1,5 +1,6 @@
 using BibliotecaAPI.Data;
 using BibliotecaAPI.Services.Autor;
+using BibliotecaAPI.Services.Livro;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,6 +19,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>{
 
 //injeção de dependências
 builder.Services.AddScoped<IAutorInterface, AutorService>();
+builder.Services.AddScoped<ILivroInterface, LivroService>();
 
 var app = builder.Build();
 
